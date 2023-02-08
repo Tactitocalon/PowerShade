@@ -1,5 +1,5 @@
 # PowerShade
-PowerShell script to automatically migrate GShade installations to ReShade. For Final Fantasy XIV on Windows only.
+### PowerShell script to automatically migrate GShade installations to ReShade. For Final Fantasy XIV on Windows only.
 
 Based on this tutorial by rika: https://gist.github.com/ry00001/3e2e63b986cb0c673645ea42ffafcc26
 
