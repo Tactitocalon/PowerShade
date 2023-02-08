@@ -7,7 +7,9 @@ This tool will not work if you've already uninstalled GShade (for now!).
 
 ## How to download
 
-Go to the Releases page (https://github.com/Tactitocalon/PowerShade/releases) and download the .zip file, and extract anywhere.
+Go to the Releases page (https://github.com/Tactitocalon/PowerShade/releases) and download the `MigrateGShadeToReshade.zip` file, and extract anywhere.
+
+
 
 ## Usage instructions
 
