@@ -23,4 +23,4 @@ download ReShade (and patched shaders), install ReShade and do its best to migra
 
 ![img.png](img.png)
 
-Note: This tool does not completely uninstall GShade. For that, try this tool: https://github.com/MirisWisdom/GShade.Nuke
+Note: This tool does not uninstall GShade. For that, try this tool: https://github.com/MirisWisdom/GShade.Nuke
