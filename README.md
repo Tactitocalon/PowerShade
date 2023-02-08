@@ -7,11 +7,7 @@ This tool will not work if you've already uninstalled GShade (for now!).
 
 ## How to download
 
-https://raw.githubusercontent.com/Tactitocalon/PowerShade/master/MigrateGShadeToReshade.ps1
-
-Firefox: Click this link, right-click and select the `Save Page As` option to save the PowerShell script to your computer.
-
-Chrome: Click this link, right-click and select the `Save As` option to save the PowerShell script to your computer. Make sure you use the `.ps1` extension, and not `.txt`.
+Go to the Releases page (https://github.com/Tactitocalon/PowerShade/releases) and download the .zip file, and extract anywhere.
 
 ## Usage instructions
 
