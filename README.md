@@ -3,7 +3,7 @@
 
 Based on this tutorial by rika: https://gist.github.com/ry00001/3e2e63b986cb0c673645ea42ffafcc26
 
-This tool will not work if you've already uninstalled GShade (for now!).
+This tool will not work if you've already uninstalled GShade. If you have followed the manual guide by rika and have run into problems, this tool may be able to fix your problems.
 
 ## How to download
 
