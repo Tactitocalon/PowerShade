@@ -64,6 +64,11 @@ try {
     Copy-Item $PathFF14GShadePresets -Destination $PathBackup -Recurse -ErrorAction Stop
     Copy-Item $PathFF14GShadeShaders -Destination $PathBackup -Recurse -ErrorAction Stop
     Copy-Item $PathFF14GShadeIni -Destination $PathBackup -ErrorAction Stop
+    $PathFF14Dxgi = Join-Path -Path $PathFF14Game -ChildPath "dxgi.dll"
+    $PathFF14D3d11 = Join-Path -Path $PathFF14Game -ChildPath "d3d11.dll"
+    if (Test-Path -Path $PathFF14Dxgi) { Copy-Item -Path $PathFF14Dxgi -Destination $PathBackup -ErrorAction Stop }
+    if (Test-Path -Path $PathFF14D3d11) { Copy-Item -Path $PathFF14D3d11 -Destination $PathBackup -ErrorAction Stop }
+
     Write-Host "Created backup of GShade files at: "(Resolve-Path $PathBackup)
 
     # We will back up any reshade files just in case they exist for some reason.
