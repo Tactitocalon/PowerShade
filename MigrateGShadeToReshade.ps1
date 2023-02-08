@@ -1,4 +1,4 @@
-Write-Host "GShade to Reshade migration script (v1)"
+Write-Host "GShade to Reshade migration script (v2)"
 Write-Host "This script will convert your existing GShade installation into a ReShade installation and migrate your presets automatically."
 Write-Host "Probably put some information on where to get help here lmao"
 Write-Host "---"
@@ -20,7 +20,15 @@ try {
     $PathFF14Game = Split-Path -Path $PathFF14Exe
     $PathFF14GShadePresets = Join-Path -Path $PathFF14Game -ChildPath "gshade-presets"
     if (-not(Test-Path -Path $PathFF14GShadePresets)) {
-        throw "Could not locate gshade-presets, expected it at: $PathFF14GShadePresets"
+        # It's possible that someone has partially completed the manual guide and is trying the automated tool.
+        # Check if they've renamed gshade-presets to reshade-presets.
+        $PathTestReshadePresetRename = Join-Path -Path $PathFF14Game -ChildPath "reshade-presets"
+        if (Test-Path -Path $PathTestReshadePresetRename) {
+           throw "ERROR: Could not locate gshade-presets ($PathFF14GShadePresets), but found reshade-presets ($PathTestReshadePresetRename).
+            Did you rename gshade-presets to reshade-presets as part of the manual migration guide? If so, please rename it back and run this tool again."
+        } else {
+            throw "Could not locate gshade-presets, expected it at: $PathFF14GShadePresets"
+        }
     }
     $PathFF14GShadeIni = Join-Path -Path $PathFF14Game -ChildPath "GShade.ini"
     if (-not(Test-Path -Path $PathFF14GShadeIni)) {
@@ -122,17 +130,14 @@ try {
 
 
     # Rename gshade-presets to reshade-presets.
-    Write-Host "Renaming gshade-presets to reshade-presets."
-    Rename-Item -Path $PathFF14GShadePresets -NewName $PathReShadePresets
+    Write-Host "Copying gshade-presets to reshade-presets."
+    Copy-Item -Path $PathFF14GShadePresets -Destination $PathReShadePresets -Recurse
 
     $PathFF14GShadeAddons = Join-Path -Path $PathFF14Game -ChildPath "gshade-addons"
     if (Test-Path -Path $PathFF14GShadeAddons) {
-        Write-Host "Renaming gshade-addons to reshade-addons."
-        Rename-Item -Path $PathFF14GShadeAddons -NewName "reshade-addons"
+        Write-Host "Copying gshade-addons to reshade-addons."
+        Copy-Item -Path $PathFF14GShadeAddons -Destination "reshade-addons" -Recurse
     }
-
-    Write-Host "Removing GShade.ini configuration file."
-    Remove-Item -Path $PathFF14GShadeIni
 
     # Done!
     Write-Host "Cleaning up temporary files."
