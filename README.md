@@ -5,6 +5,12 @@ Based on this tutorial by rika: https://gist.github.com/ry00001/3e2e63b986cb0c67
 
 This tool will not work if you've already uninstalled GShade (for now!).
 
+## How to download
+
+https://raw.githubusercontent.com/Tactitocalon/PowerShade/master/MigrateGShadeToReshade.ps1
+
+Click this link, right-click and select the `Save Page As` option to save the PowerShell script to your computer.
+
 ## Usage instructions
 
 This is intended to be used if you have an existing GShade installation, and you want to
