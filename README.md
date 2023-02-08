@@ -16,3 +16,5 @@ extraordinary courtesy, I know!), it will backup existing GShade shaders, preset
 download ReShade (and patched shaders), install ReShade and do its best to migrate your configuration.
 
 ![img.png](img.png)
+
+Note: This tool does not completely uninstall GShade. For that, try this tool: https://github.com/MirisWisdom/GShade.Nuke
