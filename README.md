@@ -11,7 +11,7 @@ https://raw.githubusercontent.com/Tactitocalon/PowerShade/master/MigrateGShadeTo
 
 Firefox: Click this link, right-click and select the `Save Page As` option to save the PowerShell script to your computer.
 
-Chrome: Click this link, right-click and select the `Save Page` option to save the PowerShell script to your computer. Make sure you use the `.ps1` extension, and not `.txt`.
+Chrome: Click this link, right-click and select the `Save As` option to save the PowerShell script to your computer. Make sure you use the `.ps1` extension, and not `.txt`.
 
 ## Usage instructions
 
