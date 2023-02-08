@@ -1,7 +1,9 @@
 # PowerShade
-PowerShell script to automatically migrate GShade installations to ReShade.
+PowerShell script to automatically migrate GShade installations to ReShade. Windows only.
 
 Based on this tutorial by rika: https://gist.github.com/ry00001/3e2e63b986cb0c673645ea42ffafcc26
+
+This tool will not work if you've already uninstalled GShade (for now!).
 
 ## Usage instructions
 

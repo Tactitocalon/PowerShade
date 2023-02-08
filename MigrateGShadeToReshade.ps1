@@ -111,7 +111,6 @@ try {
     # Modify ReShade.ini to point to the new effect paths.
     # We actually just copy GShade.ini to ReShade.ini and then use regex to fix the config.
     # That's basically two conspiracies to commit a crime right there.
-    # TODO: We could probably migrate settings from GShade.ini to ReShade.ini, but lazy lmao.
     Write-Host "Migrating GShade.ini to ReShade.ini to use new shader folders."
     Write-Host "WARNING: This is experimental and may not work correctly! If you have problems, try deleting ReShade.ini to restore to default ReShade settings."
     $ReShadeIniContent = Get-Content -Path $PathFF14GShadeIni
@@ -125,6 +124,12 @@ try {
     # Rename gshade-presets to reshade-presets.
     Write-Host "Renaming gshade-presets to reshade-presets."
     Rename-Item -Path $PathFF14GShadePresets -NewName $PathReShadePresets
+
+    $PathFF14GShadeAddons = Join-Path -Path $PathFF14Game -ChildPath "gshade-addons"
+    if (Test-Path -Path $PathFF14GShadeAddons) {
+        Write-Host "Renaming gshade-addons to reshade-addons."
+        Rename-Item -Path $PathFF14GShadeAddons -NewName "reshade-addons"
+    }
 
     Write-Host "Removing GShade.ini configuration file."
     Remove-Item -Path $PathFF14GShadeIni
